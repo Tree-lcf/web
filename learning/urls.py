@@ -13,4 +13,8 @@ urlpatterns = [
 
     # 特定主题的细写页面
     path('topics/(?P<topic_id>\d+)/', views.topic, name='topic'),
+
+    # 添加新主题
+    path('new_topic/', views.new_topic, name='new_topic'),
+
 ]
