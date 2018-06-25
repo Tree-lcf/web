@@ -20,4 +20,7 @@ urlpatterns = [
     # 添加新条目
     path('new_entry/(?P<topic_id>\d+)/', views.new_entry, name='new_entry'),
 
+    # 编辑条目
+    path('edit_entry/(?P<entry_id>\d+)/', views.edit_entry, name='edit_entry'),
+
 ]

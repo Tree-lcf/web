@@ -8,15 +8,14 @@
 {% extends 'learning/base.html' %}
 
 {% block content %}
+    <p href="{% url 'learning:topic' topic.id %}">{{ topic }}</p>
 
-    <p><a href="{% url 'learning:topic' topic.id %}">{{ topic }}</a></p>
+    <p>Edit entry:</p>
 
-    <p>Add a new entry:</p>
-
-    <form action="{% url 'learning:new_entry' topic.id %}" method="post">
+    <form action="{% url 'learning:edit_entry' entry.id %}" method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button name="submit">add entry</button>
+    <button name="submit">save changes</button>
     </form>
 
 {% endblock content %}
